@@ -5,12 +5,15 @@
 * 在 Python 中没有 switch–case 语句。
 
 ```
-if Condition1:
-    Action1 
-elif Condition2:
-    Action2
+if boolean_expression1:
+    suite1 
+elif boolean_expression2:
+    suite2
+...
+elif boolean_expressionN:
+    suiteN
 else:
-    Action3 
+    else_suite
 ```
 
 ```
