@@ -93,7 +93,7 @@ list.insert(2, 'YYY')
 ### list.index(obj)：从列表中找出某个值第一个匹配项的索引位置
 
 
-### list.copy()：复制一个已有的表
+### list.copy()：复制一个已有的表（实现对内嵌对象的一层拷贝，浅拷贝）
 
 
 ### list.reverse()：反转一个已有的表
