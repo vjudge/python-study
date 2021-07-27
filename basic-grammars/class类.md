@@ -70,6 +70,41 @@ class childClassName(parentClassName1，parentClassName2，…):
 对于私有属性和私有函数，如果需要在类外访问，可以通过公有函数实现。
 
 
+### classmethod
+
+
+
+### delattr(object, name)
+删除对象的属性。
+
+
+### getattr(object, name[, default])
+获取对象的属性。
+
+
+### hasattr(object, name)
+对象是否有某属性。
+
+
+### isinstance(object, class1)
+判断object是否是类class1是实例。
+
+
+### issubclass(class2, class1)
+判断class2是否为class1的子类。
+
+
+### property(fget=None, fset=None, fdel=None, doc=None)
+返回property属性。
+
+
+### super([type[, object-or-type]])
+返回一个代理对象，它会将方法调用委托给 type 的父类或兄弟类。
+
+
+
+
+
 
 
 
