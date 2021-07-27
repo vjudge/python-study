@@ -73,7 +73,7 @@ for col in db.ws(ws='Sheet1').cols:
 print('rc21 = ', db.ws(ws='Sheet1').address(address='B2'))
 db.ws(ws='Sheet1').update_address(address='B2', val=6)
 print('rc21 = ', db.ws(ws='Sheet1').address(address='B2'))
-xl.writexl(db=db, fn='updated.xlsx')
+# xl.writexl(db=db, fn='updated.xlsx')
 
 # ---------- range name --------------
 db.add_nr(name='Table1', ws='Sheet1', address='A1:B2')
@@ -98,15 +98,22 @@ print('row1,key=1: ', db.ws(ws='Sheet1').keyrow(key='李四', keyindex=1))
 
 
 # 获取为空
-ssd = db.ws(ws='Sheet1').ssd(keycols="KEYCOLS", keyrows="KEYROWS")
-print('ssd: ', ssd)
+otdt = db.ws(ws='Sheet1').ssd(keycols='姓名', keyrows='姓名')
+print('otdt: ', otdt)
+# otdt:  [
+#   {
+#       'keyrows': ['张三', '李四', '王五', '平均分'],
+#       'keycols': ['第1题', '第2题', '第3题', '第4题'],
+#       'data': [[6, 6, 2, 4], [5, 4, 3, 8], [3, 7, 9, 1], [1.11, 1.11, 2.89, 2.44]]
+#   }
+# ]
 
 
-# --------------- 写新文件 -------------------
-wtdb = xl.Database()
-wtdb.add_ws(ws='Sheet1')
-data = [10, 20, 30, 40]
-for row_id, data in enumerate(data, start=1):
-    wtdb.ws(ws='Sheet1').update_index(row=row_id, col=1, val=data)
-xl.writexl(db=wtdb, fn='output.xlsx')
+# # --------------- 写新文件 -------------------
+# wtdb = xl.Database()
+# wtdb.add_ws(ws='Sheet1')
+# data = [10, 20, 30, 40]
+# for row_id, data in enumerate(data, start=1):
+#     wtdb.ws(ws='Sheet1').update_index(row=row_id, col=1, val=data)
+# xl.writexl(db=wtdb, fn='output.xlsx')
 
