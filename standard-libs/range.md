@@ -1,9 +1,13 @@
 # range
+range 函数，生成不可变序列。
 
-* range(n)：生成步长为1的数列：1，2，3……n
-* range(m, n)：生成步长为1的数列：m，m+1，m+2，……，n
-* range(m, n, s)：生成步长为s的数列：m，m+s，m+2s，……，X(<=n)
+### 定义
+* range(stop)：生成步长为1的数列：1，2，3……stop
+* range(start, stop)：生成步长为1的数列：start，start+1，start+2，……，stop
+* range(start, stop, step)：生成步长为s的数列：start，start+step，start+2step，……，X(x<=stop)
 
+
+### sample
 ```
 lst = list(range(1,20,3))
 ```
