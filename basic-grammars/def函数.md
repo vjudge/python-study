@@ -32,41 +32,51 @@ print('a = ',a)
 
 
 ### 函数的参数类型
-Python 中，函数的参数有四种类型：必须参数、关键字参数、默认参数和不定长参数。
+Python 中，函数的参数有四种类型：位置参数，关键字参数 ，默认参数 ，可变位置参数 ，可变关键字参数。
 函数在定义的时候，已经声明了参数的数量，我们在调用函数的时候，参数的数量必须与声明时一致，且要注意顺序。
 
-#### 必须参数
+#### 位置参数
 * 参数数量要对应
 * 参数顺序要一致
-
-
-
-#### 关键字参数
-```
-def printInfo(name, sex, age):
+```python
+def print_info(name, sex, age):
     print('name: ', name)
     print('sex: ', sex)
     print('age: ', age)
-
-# 都是正确的
-printInfo(name='Jack', sex='female', age=18)
-printInfo(sex='female', name='Jack', age=18)
-printInfo(sex='female', age=18, name='Jack')
+print_info('Jack', 'female', 18)
 ```
 
+#### 关键字参数
+```python
+# 都是正确的
+print_info(name='Jack', sex='female', age=18)
+print_info(sex='female', name='Jack', age=18)
+print_info(sex='female', age=18, name='Jack')
+```
 
 #### 默认参数
 调用函数时，如果没有传递参数，则会使用默认参数。
-```
+```python
 printInfo(name='Jack', sex='female')
 ```
 
-
-#### 不定长参数
+#### 可变位置参数
+出现带一个星号的参数。
 加了（*）的变量名会存放所有未命名的变量参数。如果在函数调用时没有指定参数，它就是一个空元组。我们也可以不向函数传递未命名的变量。
+```python
+def f(a, *b, **c):
+    print('a: ', a)
+    print('b: ', b)
+    print('c: ', c)
+f(1, 2, 3, w=4, h=5)
+# b: (2, 3)
 ```
-def functionname([formal_args,] *var_args_tuple ):
-    functionbody
+
+### 可变关键字参数
+带两个星号的参数。
+```python
+f(1, 2, 3, w=4, h=5)
+# c: {'w': 4, 'h': 5}
 ```
 
 
