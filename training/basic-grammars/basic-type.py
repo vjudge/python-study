@@ -20,7 +20,18 @@ print('首字符大写：', str1.title())
 print('连接字符串：', '-'.join(['111', '222', '333']))
 
 
+# 赋值
+a, b = {'c': 1, 'd': 2}
+print('a: ', a)
+# a:  c
+print('b: ', b)
+# b:  d
 
+a, b = 1, 2
+print('a: ', a)
+# a:  1
+print('b: ', b)
+# b:  2
 
 
 
