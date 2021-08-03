@@ -22,12 +22,12 @@ dict([('Excellent', 100), ('Good', 80)], Pass=60, Fail=50)
 ```
 
 ### 访问字典
-* 通过键访问
-* 通过内建 get(key) 方法访问
+* 通过键访问：如果不存在，就会抛异常
+* 通过内建 get(key) 方法访问：如果不存在，会返回默认值
 ```python
 dict = { 'Excellent': 100, 'Good': 80, 'Pass': 60, 'Fail': 50 }
 print('dict[1]: ', dict[1])
-print("dict.get('Good'): ", dict.get('Good'))
+print("dict.get('Good'): ", dict.get('Good', 0))
 # 遍历
 for key, val in dict.items():
     print(key, val)
