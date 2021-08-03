@@ -33,6 +33,35 @@ print('a: ', a)
 print('b: ', b)
 # b:  2
 
+# ------ 格式化字符串 ------
+print("I'm %s. I'm %d year old" % ('Rose', 19))
+
+print("I'm %(name)s. I'm %(age)d year old" % {'name': 'Rose', 'age': 19})
+
+# 不设置指定位置，按默认顺序
+print("{} {}".format("hello", "world", "test"))
+# 设置指定位置
+print("{0} {1}".format("hello", "world"))
+# 设置指定位置
+print("{1} {0} {1}".format("hello", "world"))
+
+print("我是：{name}, 大家可以叫我 {nickname}".format(name="vjudge", nickname="VVV"))
+
+# 通过字典设置参数
+names = {"name": "vjudge", "nickname": "VVV"}
+print("我是：{name}, 大家可以叫我 {nickname}".format(**names))
+
+# 通过列表索引设置参数
+lst1 = ['vjudge', 'VVV']
+print("我是：{0[0]}, 大家可以叫我 {0[1]}".format(lst1))  # "0" 是必须的
+
+
+# ------ ------
+print("%.2f" % 3.1415926)
+print("%.0f" % 3.1415926)
+print("%+.2f" % 3.1415926)
+print("%+.2f" % -3.1415926)
+
 
 
 
