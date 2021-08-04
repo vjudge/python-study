@@ -61,9 +61,10 @@ lst = [x+y for x in range(1, 5) if x % 2 == 0 for y in range(1, 5) if y % 2 == 1
 print('lst: ', lst)
 # lst:  [3, 5, 5, 7]
 
-
-
-
+# y = 2*|x| + 5
+x = [1, 2, 5]
+y = [value * 2 + 5 if value > 0 else -value * 2 + 5 for value in x]
+print('y: ', y)
 
 
 
