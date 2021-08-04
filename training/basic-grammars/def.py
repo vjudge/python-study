@@ -19,6 +19,12 @@ def parent():
 parent()
 
 
+# 函数求和
+def _sum(x, y):
+    return x + y
+
+
+print(_sum(3, 5))
 
 
 
