@@ -1,6 +1,13 @@
 # class类
 
 类（Class）是面向对象程序设计（OOP，Object-Oriented Programming）实现信息封装的基础。
+* 类：一群有着相似性的事物的集合，这里对应 Python 的 class
+* 对象：集合中的一个事物，这里对应由 class 生成的某一个 object
+* 属性：对象的某个静态特征
+* 函数：对象的某个动态能力
+
+
+### 语法
 在 Python 中，类具有多态、封装、继承。不过，Python 中没有重载，类的定义细节也具有明显差异。定义类的一般形式如下：
 ```
 class ClassName:
@@ -38,8 +45,9 @@ Python 没有重载特性，只能定义一个构造函数，且函数名为 __i
 
 
 ### 继承
-通过继承，子类可以重用父类中的函数和数据成员。
-继承，通常将实施继承行为的类称为子类（Child Class）或者派生类（Derived Class），被继承的类称为父类（Parent Class）或者基类（Base Class)。
+通过继承，子类可以重用父类中的函数和数据成员。  
+继承，通常将实施继承行为的类称为子类（Child Class）或者派生类（Derived Class），被继承的类称为父类（Parent Class）或者基类（Base Class)。  
+每个类都有构造函数，继承类在生成对象的时候，是不会自动调用父类的构造函数的，因此你必须在 init() 函数中显式调用父类的构造函数。它们的执行顺序是 子类的构造函数 -> 父类的构造函数。
 ```
 class childClassName(parentClassName):
     <statement-1>
@@ -70,8 +78,19 @@ class childClassName(parentClassName1，parentClassName2，…):
 对于私有属性和私有函数，如果需要在类外访问，可以通过公有函数实现。
 
 
-### classmethod
+### 成员函数
+能够访问或者修改对象的属性。  
+成员函数不需要任何装饰器声明，第一个参数 self 代表当前对象的引用，可以通过此函数，来实现想要的查询 / 修改类的属性等功能。
 
+
+### classmethod: 类函数
+能够访问或者修改对象的属性。  
+类函数需要装饰器 @classmethod 来声明。类函数的第一个参数一般为 cls，表示必须传一个类进来。类函数最常用的功能是实现不同的 init 构造函数。
+
+
+### staticmethod: 静态函数
+与类没有什么关联，最明显的特征便是，静态函数的第一个参数没有任何特殊性。  
+静态函数可以用来做一些简单独立的任务，既方便测试，也能优化代码结构。静态函数可以通过在函数前一行加上 @staticmethod 来表示。
 
 
 ### delattr(object, name)
@@ -102,6 +121,8 @@ class childClassName(parentClassName1，parentClassName2，…):
 返回一个代理对象，它会将方法调用委托给 type 的父类或兄弟类。
 
 
+### 抽象函数
+抽象类是一种特殊的类，生下来就是作为父类存在的，一旦对象化就会报错。抽象函数定义在抽象类之中，子类必须重写该函数才能使用。相应的抽象函数，则是使用装饰器 @abstractmethod 来表示。
 
 
 
